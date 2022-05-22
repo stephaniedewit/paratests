@@ -1,0 +1,53 @@
+---
+title: "Introduction to paratests"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{paratests-vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(paratests)
+```
+
+This is the introduction to my DSFB2 portfolio R package paratests. It is used to depict descriptive graphs and perform parametric, statistical tests. 
+
+Here we will show an example of how functions can be used together to analyze the PlantGrowth data set.
+
+```{r}
+# Load data:
+PlantGrowth <- readRDS(here::here("data_raw", "03_plantgrowth", "PlantGrowth.rds"))
+
+# Use the gem_barchart function to visualize the mean and standard deviation of weight per condition
+gem_barchart(PlantGrowth, group, weight)
+
+# perform a Shapiro Wilk on the weight values per condition to check for normality (a parametrical test requires every group to be normally distributed):
+sw_tidy(PlantGrowth, group, weight)
+```
+
+The three obtained P-values are above 0.05, which means the three experimental groups are normally distributed. We get green light to perform an ANOVA.
+
+```{r}
+anova(PlantGrowth$weight, PlantGrowth$group)
+```
+
+
+The obtained P-value is under 0.05, which means there is a statistical significant difference in weight amoung the three experimental groups.
+
+Let's add some fake data about the height of the measured plants to demonstrate the cor_scatterplot function.
+
+```{r}
+PlantGrowth <- PlantGrowth %>% mutate(height = abs(rnorm(30, 10, 2)), .after = 1)
+
+cor_scatterplot(PlantGrowth, PlantGrowth$weight, PlantGrowth$height, PlantGrowth$group, reposition_r = 1) # Use the reposition_r argument to adjust the "Pearson's r = #" label position on the x axis. The default is set as 'lowest x axis value + 10'.
+```
+
+Since Pearson's r correlation coefficient is below 0.99 and the P-value for this correlation is above 0.05, there doesn't seem to be a (statistical significant) correlation between plant weight and the randomly generated plant heights.
