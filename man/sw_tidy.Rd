@@ -4,14 +4,14 @@
 \alias{sw_tidy}
 \title{Title}
 \usage{
-sw_tidy(data, groep, kolom)
+sw_tidy(data, groep, waarde)
 }
 \arguments{
 \item{data}{A tidy tibble with group and values column}
 
-\item{groep}{The groups measured}
+\item{groep}{The column with the measured groups}
 
-\item{kolom}{The measurement values}
+\item{waarde}{The column with measurement values}
 }
 \value{
 A P-value

@@ -4,14 +4,14 @@
 \alias{gem_barchart}
 \title{Title}
 \usage{
-gem_barchart(data, groep, kolom)
+gem_barchart(data, groep, waarde)
 }
 \arguments{
 \item{data}{A tidy tibble with group and values column}
 
-\item{groep}{The groups measured}
+\item{groep}{The column with the measured groups}
 
-\item{kolom}{The measurement values}
+\item{waarde}{The column with measurement values}
 }
 \value{
 A barchart with for each param groep the mean param kolom with error bars of standard deviation 1.
