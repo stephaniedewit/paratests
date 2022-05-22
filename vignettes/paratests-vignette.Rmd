@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(paratests)
+library(tidyverse)
 ```
 
 This is the introduction to my DSFB2 portfolio R package paratests. It is used to depict descriptive graphs and perform parametric, statistical tests. 
