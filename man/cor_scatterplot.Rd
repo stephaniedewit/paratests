@@ -4,7 +4,7 @@
 \alias{cor_scatterplot}
 \title{Title}
 \usage{
-cor_scatterplot(data, kolom_x, kolom_y, groep)
+cor_scatterplot(data, kolom_x, kolom_y, groep, reposition_r = 10)
 }
 \arguments{
 \item{data}{A tidy tibble with grouping and two value columns.}

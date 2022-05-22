@@ -19,12 +19,16 @@
 #' @examples
 #' library("palmerpenguins")
 #' cor_scatterplot(penguins, penguins$body_mass_g, penguins$flipper_length_mm, penguins$species)
-cor_scatterplot <- function(data, kolom_x, kolom_y, groep) {
+cor_scatterplot <- function(data, kolom_x, kolom_y, groep, reposition_r = 10) {
 
-cor_coefficient<-round(cor.test(kolom_x, kolom_y, method = c("pearson"))$estimate, 2)
+cor_pvalue <- round(cor.test(kolom_x, kolom_y, method = "pearson")$p.value, 2)
 
-ggplot(data = penguins, aes(x = kolom_x, y = kolom_y)) +
+cor_coefficient <- round(cor.test(kolom_x, kolom_y, method = "pearson")$estimate, 2)
+
+ggplot(data = data, aes(x = kolom_x, y = kolom_y)) +
   geom_point(aes(color = groep), size = 1, alpha = 0.8) +
-  annotate("text",x = (min(kolom_x, na.rm = TRUE) + 1000), y = max(kolom_y, na.rm = TRUE), size = 4, label = paste("Pearson's r = ", cor_coefficient), colour = "red")
+  annotate("text", x = (min(kolom_x, na.rm = TRUE) + reposition_r), y = max(kolom_y, na.rm = TRUE), size = 4, label = paste("Pearson's r = ", cor_coefficient), colour = "red")
+
+paste("P-value of the correlation:", cor_pvalue)
 }
 
