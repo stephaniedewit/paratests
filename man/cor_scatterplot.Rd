@@ -7,13 +7,15 @@
 cor_scatterplot(data, kolom_x, kolom_y, groep, reposition_r = 10)
 }
 \arguments{
-\item{data}{A tidy tibble with grouping and two value columns.}
+\item{data}{A tidy tibble with grouping and two value columns}
 
 \item{kolom_x}{The measurement values of a variable which are to correlate to...}
 
 \item{kolom_y}{...the measurement values of another variable}
 
 \item{groep}{The groups into which we can divide the values}
+
+\item{reposition_r}{Numerical argument to adjust the "Pearson's r = #" label position on the x axis}
 }
 \value{
 A scatterplot to visualize the correlation between twe two variables, with a Pearson's correlation coefficient

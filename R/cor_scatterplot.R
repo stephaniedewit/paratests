@@ -1,9 +1,10 @@
 #' Title
 #'
-#' @param data A tidy tibble with grouping and two value columns.
+#' @param data A tidy tibble with grouping and two value columns
 #' @param kolom_x The measurement values of a variable which are to correlate to...
 #' @param kolom_y ...the measurement values of another variable
 #' @param groep The groups into which we can divide the values
+#' @param reposition_r Numerical argument to adjust the "Pearson's r = #" label position on the x axis
 #'
 #' @return A scatterplot to visualize the correlation between twe two variables, with a Pearson's correlation coefficient
 #' @importFrom magrittr %>%
