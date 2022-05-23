@@ -3,7 +3,7 @@
 #' @param data A tidy tibble with grouping and two value columns
 #' @param kolom_x The measurement values of a variable which are to correlate to...
 #' @param kolom_y ...the measurement values of another variable
-#' @param groep The groups into which we can divide the values
+#' @param groep Alternative: The groups into which we can divide the values
 #' @param reposition_r Numerical argument to adjust the "Pearson's r = #" label position on the x axis
 #'
 #' @return A scatterplot to visualize the correlation between twe two variables, with a Pearson's correlation coefficient
@@ -20,7 +20,7 @@
 #' @examples
 #' library("palmerpenguins")
 #' cor_scatterplot(penguins, penguins$body_mass_g, penguins$flipper_length_mm, penguins$species)
-cor_scatterplot <- function(data, kolom_x, kolom_y, groep, reposition_r = 10) {
+cor_scatterplot <- function(data, kolom_x, kolom_y, groep = NULL, reposition_r = 10) {
 
 cor_pvalue <- round(cor.test(kolom_x, kolom_y, method = "pearson")$p.value, 2)
 cor_coefficient <- round(cor.test(kolom_x, kolom_y, method = "pearson")$estimate, 2)

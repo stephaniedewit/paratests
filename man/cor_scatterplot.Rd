@@ -4,7 +4,7 @@
 \alias{cor_scatterplot}
 \title{Title}
 \usage{
-cor_scatterplot(data, kolom_x, kolom_y, groep, reposition_r = 10)
+cor_scatterplot(data, kolom_x, kolom_y, groep = NULL, reposition_r = 10)
 }
 \arguments{
 \item{data}{A tidy tibble with grouping and two value columns}
@@ -13,7 +13,7 @@ cor_scatterplot(data, kolom_x, kolom_y, groep, reposition_r = 10)
 
 \item{kolom_y}{...the measurement values of another variable}
 
-\item{groep}{The groups into which we can divide the values}
+\item{groep}{Alternative: The groups into which we can divide the values}
 
 \item{reposition_r}{Numerical argument to adjust the "Pearson's r = #" label position on the x axis}
 }
