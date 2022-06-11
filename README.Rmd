@@ -29,13 +29,25 @@ Every function has to be performed on a tidy dataset.
 
 ## Installation
 
-You can install the development version of paratests from GitHub with:
+Paratests depends on the following packages, make sure these are installed first:
 
 ``` r
-# install.packages("devtools")
+# install.packages("dplyr")
+# install.packages("ggplot2")
+# install.packages("magrittr")
+# install.packages("palmerpenguins")
+# install.packages("stats")
+```
+
+You can then install and use the the most recent version of paratests from this GitHub with:
+
+``` r
 devtools::install_github("stephaniedewit/paratests")
+library(paratests)
 ```
 
 ## Examples
 
 For an example of each function use `?anova()`, `?cor_scatterplot()`, `?mean_barchart()` and `?sw_tidy`. For a vignette with a short analysis combining the four functions use `browseVignettes("paratests")`. 
+
+To try for yourself, two example datasets can be loaded into the Environment with `data(PlantGrowth_edit)` and `data(potato)`.

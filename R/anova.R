@@ -6,7 +6,6 @@
 #' @return A p value
 #' @importFrom stats aov
 #' @importFrom stats summary.aov
-#' @importFrom readr read_delim
 #' @export
 #'
 #' @examples
