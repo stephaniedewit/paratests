@@ -22,9 +22,11 @@ Every function has to be performed on a tidy dataset.
 ## Installation
 
 Paratests depends on the following packages, make sure these are
-installed first:
+installed and loaded with `library()` first:
 
 ``` r
+# install.packages("usethis")
+# install.packages("devtools")
 # install.packages("dplyr")
 # install.packages("ggplot2")
 # install.packages("magrittr")
@@ -39,6 +41,9 @@ from this GitHub with:
 devtools::install_github("stephaniedewit/paratests")
 library(paratests)
 ```
+
+NOTE: {paratests} anova() function masks the {stats} anova() function.
+To use the latter use `stats::anova()`.
 
 ## Examples
 
