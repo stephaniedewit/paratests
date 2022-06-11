@@ -2,28 +2,29 @@
 % Please edit documentation in R/cor_scatterplot.R
 \name{cor_scatterplot}
 \alias{cor_scatterplot}
-\title{Title}
+\title{Scatterplot for correlation test results}
 \usage{
-cor_scatterplot(data, kolom_x, kolom_y, groep = NULL, reposition_r = 10)
+cor_scatterplot(data, column_x, column_y, group = NULL, reposition_r = 10)
 }
 \arguments{
 \item{data}{A tidy tibble with grouping and two value columns}
 
-\item{kolom_x}{The measurement values of a variable which are to correlate to...}
+\item{column_x}{The measurement values of a variable, plotted on the x axis, which are to correlate to...}
 
-\item{kolom_y}{...the measurement values of another variable}
+\item{column_y}{...the measurement values of another variable, plotted on the y axis}
 
-\item{groep}{Alternative: The groups into which we can divide the values}
+\item{group}{Alternatively: The groups into which the values are divided}
 
 \item{reposition_r}{Numerical argument to adjust the "Pearson's r = #" label position on the x axis}
 }
 \value{
-A scatterplot to visualize the correlation between twe two variables, with a Pearson's correlation coefficient
+A scatterplot to visualize the correlation between two variables, with a Pearson's correlation coefficient
 }
 \description{
-Title
+Scatterplot for correlation test results
 }
 \examples{
 library("palmerpenguins")
-cor_scatterplot(penguins, penguins$body_mass_g, penguins$flipper_length_mm, penguins$species)
+library("ggplot2")
+cor_scatterplot(penguins, penguins$body_mass_g, penguins$flipper_length_mm, penguins$species, reposition_r = 1000)
 }

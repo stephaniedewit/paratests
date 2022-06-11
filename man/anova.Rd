@@ -2,20 +2,20 @@
 % Please edit documentation in R/anova.R
 \name{anova}
 \alias{anova}
-\title{Title}
+\title{ANOVA P-value}
 \usage{
-anova(waarde, groep)
+anova(value, group)
 }
 \arguments{
-\item{waarde}{The column with measurement values inside a tidy tible}
+\item{value}{The column with the measurement values inside a tidy tibble}
 
-\item{groep}{The column with the measured groups inside a tidy tibble}
+\item{group}{The column with the measured groups inside a tidy tibble}
 }
 \value{
 A P-value
 }
 \description{
-Title
+ANOVA P-value
 }
 \examples{
 potato <- data.frame(Groep = c(rep("group1", 11), rep("group2", 11), rep("group3", 11), rep("group4", 11)), Natrium = c(0.312, 0.392, 0.413, 0.419, 0.320, 0.430, 0.379, 0.305, 0.479, 0.382, 0.425, 0.416, 0.339, 0.320, 0.302, 0.302, 0.463, 0.483, 0.460, 0.350, 0.352, 0.488, 0.434, 0.381, 0.374, 0.414, 0.331, 0.466, 0.420, 0.304, 0.358, 0.336, 0.383, 0.474, 0.415, 0.440, 0.330, 0.331, 0.356, 0.493, 0.463, 0.308, 0.309, 0.334))

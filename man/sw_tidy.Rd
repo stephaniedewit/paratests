@@ -2,22 +2,22 @@
 % Please edit documentation in R/sw_tidy.R
 \name{sw_tidy}
 \alias{sw_tidy}
-\title{Title}
+\title{Shapiro Wilk normality test for tidy data}
 \usage{
-sw_tidy(data, groep, waarde)
+sw_tidy(data, group, value)
 }
 \arguments{
 \item{data}{A tidy tibble with group and values column}
 
-\item{groep}{The column with the measured groups}
+\item{group}{The column with the measured groups}
 
-\item{waarde}{The column with measurement values}
+\item{value}{The column with measurement values}
 }
 \value{
 A P-value
 }
 \description{
-Title
+Shapiro Wilk normality test for tidy data
 }
 \examples{
 rabbit_ears <- data.frame(rabbitnr = seq(1,20),colour = c(rep("beige",10),rep("brown",10)), earlength = c(17.5,13.0,18.6,19.4,20.9,18.9,22.8,20.3,22.1,20.4,23.0,24.1,26.1,25.2,27.8,28.5,26.5,21.5,20.2,18.8))
