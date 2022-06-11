@@ -17,18 +17,19 @@ knitr::opts_chunk$set(
 ```{r setup, include = FALSE}
 library(paratests)
 library(dplyr)
+library(ggplot2)
 ```
 
-This is the introduction to my DSFB2 portfolio R package paratests. It is used to depict descriptive graphs and perform parametric, statistical tests. 
+This is the introduction to my R package {paratests}. It is used to depict descriptive graphs and perform parametric, statistical tests as well as non-parametric tests. 
 
-Here we will show an example of how functions can be used together to analyze the PlantGrowth data set.
+Here we will show an example of how {paratests} functions can be used together to analyze the PlantGrowth data set.
 
 ```{r}
 # Load data:
 data("PlantGrowth_edit")
 
-# Use the gem_barchart function to visualize the mean and standard deviation of weight per condition
-gem_barchart(PlantGrowth_edit, group, weight)
+# Use the mean_barchart function to visualize the mean and standard deviation of weight per condition
+mean_barchart(PlantGrowth_edit, group, weight)
 
 # perform a Shapiro Wilk on the weight values per condition to check for normality (a parametrical test requires every group to be normally distributed):
 sw_tidy(PlantGrowth_edit, group, weight)
@@ -43,10 +44,10 @@ anova(PlantGrowth_edit$weight, PlantGrowth_edit$group)
 
 The obtained P-value is under 0.05, which means there is a statistical significant difference in weight amoung the three experimental groups.
 
-I randomly added some fake data about the amount of leafs of the measured plants to demonstrate the cor_scatterplot function.
+I added some fake data about the height and amount of leafs of the measured plants to demonstrate the cor_scatterplot function. The correlation scatterplot should show that a heigher plant has more leafs.
 
 ```{r}
-cor_scatterplot(PlantGrowth_edit, PlantGrowth_edit$height, PlantGrowth_edit$leafs, PlantGrowth$group, reposition_r = 3) # Use the reposition_r argument to adjust the "Pearson's r = #" label position on the x axis. The default is set as 'lowest x axis value + 10'.
+cor_scatterplot(PlantGrowth_edit, PlantGrowth_edit$height, PlantGrowth_edit$leafs, PlantGrowth$group, reposition_r = 4) # Use the reposition_r argument to adjust the "Pearson's r = #" label position on the x axis. The default is set as 'lowest x axis value + 10'.
 ```
 
-Since Pearson's r correlation coefficient is below 0.99 and the P-value for this correlation is above 0.05, there doesn't seem to be a statistical significant correlation between plant height and number of leafs amoung the groups.
+Since Pearson's r correlation coefficient is 0.99 and the P-value for this correlation is below 0.05, there seems to be a statistical significant correlation between plant height and the number of leafs for each group.

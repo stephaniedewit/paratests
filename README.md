@@ -6,55 +6,45 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of paratests is to …
+The goal of paratests is to make performing (non-)parametric tests in R
+easier and more reproducible. Today this package contains four
+functions:
+
+-   **anova()**: print the p value of an analysis of variance summary
+-   **cor_scatterplot()**: scatterplot of variables and their
+    correlation test coefficient and p value
+-   **mean_barchart()**: barchart of a variable mean and standard
+    deviation per group
+-   **sw_tidy()**: print the p value of a Shapiro Wilk normality test
+
+Every function has to be performed on a tidy dataset.
 
 ## Installation
 
-You can install the development version of paratests from
-[GitHub](https://github.com/) with:
+Paratests depends on the following packages, make sure these are
+installed first:
 
 ``` r
-# install.packages("devtools")
+# install.packages("dplyr")
+# install.packages("ggplot2")
+# install.packages("magrittr")
+# install.packages("palmerpenguins")
+# install.packages("stats")
+```
+
+You can then install and use the the most recent version of paratests
+from this GitHub with:
+
+``` r
 devtools::install_github("stephaniedewit/paratests")
-```
-
-## Example
-
-This is a basic example which shows you how to solve a common problem:
-
-``` r
 library(paratests)
-#> 
-#> Attaching package: 'paratests'
-#> The following object is masked from 'package:stats':
-#> 
-#>     anova
-## basic example code
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+## Examples
 
-``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
-```
+For an example of each function use `?anova()`, `?cor_scatterplot()`,
+`?mean_barchart()` and `?sw_tidy`. For a vignette with a short analysis
+combining the four functions use `browseVignettes("paratests")`.
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this. You could also
-use GitHub Actions to re-render `README.Rmd` every time you push. An
-example workflow can be found here:
-<https://github.com/r-lib/actions/tree/v1/examples>.
-
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+To try for yourself, two example datasets can be loaded into the
+Environment with `data(PlantGrowth_edit)` and `data(potato)`.

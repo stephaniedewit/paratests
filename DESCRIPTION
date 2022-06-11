@@ -1,9 +1,9 @@
 Package: paratests
-Title: Make Parametric Tests More Shareable
+Title: Make (Non-)Parametric Tests More Shareable
 Version: 0.0.0.9000
 Authors@R: 
     person("Stephanie", "de Wit", , "stephanie.dewit@student.hu.nl", role = c("aut", "cre"))
-Description: This package contains functions for parametric, statistical tests and corresponding descriptive graphs. It simplifies statistical analysis and makes it more shareable.
+Description: This package contains functions for parametric and non-parametric, statistical tests and corresponding descriptive graphs. It simplifies statistical analysis and makes it more reproducible.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -11,12 +11,9 @@ RoxygenNote: 7.2.0
 Imports: 
     dplyr,
     ggplot2,
-    here,
     magrittr,
     palmerpenguins,
-    readr,
     stats,
-    tibble
 Suggests: 
     knitr,
     rmarkdown
