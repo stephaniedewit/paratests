@@ -1,9 +1,9 @@
-#' ANOVA P-value
+#' ANOVA p value
 #'
 #' @param value The column with the measurement values inside a tidy tibble
 #' @param group The column with the measured groups inside a tidy tibble
 #'
-#' @return A P-value
+#' @return A p value
 #' @importFrom stats aov
 #' @importFrom stats summary.aov
 #' @importFrom readr read_delim

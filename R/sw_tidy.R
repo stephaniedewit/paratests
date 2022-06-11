@@ -1,4 +1,4 @@
-#' Shapiro Wilk normality test for tidy data
+#' Shapiro Wilk normality test
 #'
 #' @param data A tidy tibble with group and values column
 #' @param group The column with the measured groups
