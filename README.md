@@ -47,7 +47,7 @@ To use the latter use `stats::anova()`.
 
 ## Examples
 
-For an example of each function use `?anova()`, `?cor_scatterplot()`,
+For a description of each function use `?anova()`, `?cor_scatterplot()`,
 `?mean_barchart()` and `?sw_tidy`. For a vignette with a short analysis
 combining the four functions use `browseVignettes("paratests")`.
 
